@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/news-image-20261117/kiroroai/news-image-20261117/rank.svg)](https://make.fun/bounty/news-image-20261117/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261117)
 [![reward](https://make.fun/badge/news-image-20261117/kiroroai/news-image-20261117/reward.svg)](https://make.fun/bounty/news-image-20261117?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261117)
 
-One image that sums up the world news of Tuesday 17 November 2026: a front-page newspaper poster, the entrant's own artwork, with the day's date in its masthead and the day's biggest stories as photo-style panels — Ukraine strikes the Kerch Bridge as the lead, tankers hit mines near Hormuz, Trump lands in Manila, the Vulcan rocket fails in flight, and Nvidia after Huang — with the Pentagon audit, the JPMorgan software bug and the five EU states' Rwanda hub in the bottom band. The poster ships as `entry.png`; `main.py` (Python, standard library only) copies it unchanged to the output directory, so the judge sees exactly these bytes.
+One page, one picture, one whole day: a dense broadsheet that sums up the world news of Tuesday 17 November 2026. Three illustrated lead stories — the Kerch Bridge span collapse, the Hormuz tanker mine strikes as a third US carrier arrives, and Trump's Manila Quad summit — sit over a grid of twelve more stories and an "Also on Tuesday" column carrying the count to 44 stories from six continents, every one of them first reported that Tuesday. The image ships as `entry.png` (1024×1024); `main.py` copies it to the output directory unchanged.
 
 ## Run it
 

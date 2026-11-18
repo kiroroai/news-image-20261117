@@ -1,32 +1,27 @@
 #!/usr/bin/env python3
 """Entry program for the make.fun bounty news-image-20261117.
 
-The entry is the image shipped beside this file, entry.png: a front-page
-poster summing up the world news of Tuesday 17 November 2026. Following the
-kit starter's convention, this program copies that image, byte for byte, to
-the output location -- MAKEFUN_OUTPUT_DIR when the variable is set, and
-/output otherwise -- creating the output directory first when it does not
-exist yet:
+The entry image ships beside this file as entry.png. Running the program
+copies it, byte for byte, to the output directory: MAKEFUN_OUTPUT_DIR when
+that environment variable is set, otherwise /output. The output directory
+is created when it does not exist yet.
 
-    mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
-
-Python standard library only; the copy is deterministic, so repeated runs
-produce byte-identical output.
+Python standard library only; no network access.
 """
 
 import os
 import shutil
-from pathlib import Path
-
-HERE = Path(__file__).resolve().parent
-SOURCE = HERE / "entry.png"
+import sys
 
 
-def main() -> None:
-    output_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
-    output_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(SOURCE, output_dir / "entry.png")
+def main() -> int:
+    here = os.path.dirname(os.path.abspath(__file__))
+    source = os.path.join(here, "entry.png")
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
+    os.makedirs(out_dir, exist_ok=True)
+    shutil.copyfile(source, os.path.join(out_dir, "entry.png"))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
